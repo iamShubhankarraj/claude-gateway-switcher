@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gateway Hub — Free Model Switcher</title>
+  <meta name="description" content="Browse and switch between free Claude, GPT & open-source model gateways — live model lists, one-click apply to Claude Code.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23e8431f'/></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="hdr">
+      <div class="pill"><span class="dot"></span> 01 — Live Free-Model Gateway Hub</div>
+      <h1>Gateway<br><em>Hub</em></h1>
+      <p>Tap a gateway → browse its <b>live free models</b> → pick one → apply. Claude, GPT &amp; open-source — every free model, always up to date.</p>
+    </header>
+
+    <div class="active-bar">
+      <div class="chip live" id="liveChip">
+        <span class="ic">⚡</span>
+        <span id="liveText">Loading…</span>
+      </div>
+      <div class="chip">
+        <span class="ic">📁</span>
+        <span id="pathText">~/.claude/settings.json</span>
+      </div>
+    </div>
+
+    <div class="toolbar">
+      <div class="stat"><b id="statGw">0</b><span>gateways</span></div>
+      <div class="stat"><b id="statFree">0</b><span>free models</span></div>
+      <input id="globalSearch" class="gsearch" type="text" placeholder="FILTER GATEWAYS / ↵" oninput="filterGateways(this.value)">
+    </div>
+
+    <div class="grid" id="grid"></div>
+
+    <div id="testResult" class="test-result"></div>
+
+    <div class="out-box" id="outBox">
+      <div class="out-hdr">
+        <h3 id="outTitle">settings.json preview</h3>
+        <div class="acts">
+          <button class="btn btn2" onclick="copyJSON()">Copy</button>
+        </div>
+      </div>
+      <div class="code" id="jsonOut"></div>
+    </div>
+
+    <div class="term">
+      <div class="term-bar">
+        <span class="tdot r"></span><span class="tdot y"></span><span class="tdot g"></span>
+        <span class="term-title" id="termTitle">zsh — Claude Code</span>
+      </div>
+      <div class="term-body" id="termOut"></div>
+    </div>
+
+    <div class="actions">
+      <button class="btn btn-go" id="applyBtn" onclick="applyConfig()">Apply to Claude Code →</button>
+      <button class="btn btn-test" onclick="testConnection()">Test Connection</button>
+      <button class="btn btn2" onclick="copyJSON()">Copy Config</button>
+    </div>
+
+    <div class="foot">
+      <span>Gateway Hub — switch gateways, not vibes.</span>
+      <span>Built by <a href="https://instagram.com/subh.expp" target="_blank">subh.expp</a></span>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"><span id="toastTxt"></span></div>
+
+  <script src="/app.js"></script>
+</body>
+</html>

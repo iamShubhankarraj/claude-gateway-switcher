@@ -1,0 +1,13 @@
+{
+  "name": "claude-gateway-switcher",
+  "version": "1.0.0",
+  "description": "Claude Code API Gateway Switcher",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}
