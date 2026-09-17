@@ -34,6 +34,17 @@ const M = (...ids) => ids.map((id) => ({ id, name: id, pricing: null }));
 // ═══════════════════════════════════════════════════════════════
 const PROVIDERS = [
   {
+    id: 'bluemiind', name: 'Bluemiind', sub: 'api.bluemiind.com', icon: '🧠',
+    accent: '#3b82f6', glow: 'rgba(59,130,246,.14)',
+    format: 'anthropic', claudeCode: true,
+    baseUrl: 'https://api.bluemiind.com/',
+    desc: 'Bluemiind API Gateway. Optimized for Moonshot AI Kimi K2.7 model.',
+    signup: 'https://bluemiind.com',
+    defaultKey: 'sf_be7d17a8a54f3ed28a28b00064ba9fc6ad9312c8679e74ab',
+    isFree: allFree,
+    staticModels: M('moonshotai/kimi-k2.7-code', 'claude-opus-4'),
+  },
+  {
     id: 'agentrouter', name: 'Agent Router', sub: 'agentrouter.org', icon: '🚀',
     accent: '#8b5cf6', glow: 'rgba(139,92,246,.14)',
     format: 'anthropic', claudeCode: true,
